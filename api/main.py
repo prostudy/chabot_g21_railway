@@ -80,6 +80,19 @@ Responde solo el JSON, sin explicación.
     return perfil
 
 
+def parafrasear_respuesta(texto, estilo="más empático y conversacional"):
+    prompt = (
+        f"Reformula este contenido en un tono {estilo}, manteniendo la información y formato en HTML amigable, "
+        f"con párrafos <p>, saltos de línea <br> y palabras clave en <strong>:\n\n{texto}"
+    )
+    
+    response = openai.ChatCompletion.create(
+        model="gpt-3.5-turbo",
+        messages=[{"role": "user", "content": prompt}]
+    )
+    
+    return response.choices[0].message["content"]
+
 
 app = FastAPI()
 
@@ -169,12 +182,15 @@ async def chat(request: Request):
     # 1. Buscar coincidencia en el FAQ
     pregunta_similar = encontrar_pregunta_mas_similar(pregunta_usuario)
     if pregunta_similar:
-        respuesta = faq[pregunta_similar]
+        respuesta_original = faq[pregunta_similar]["respuesta"]
+        respuesta_parafraseada = parafrasear_respuesta(respuesta_original)
 
         perfil_usuario = analizar_usuario(pregunta_usuario)
 
-        guardar_interaccion(user_id, pregunta_usuario, respuesta["respuesta"], origen="faq",tipo_negocio=perfil_usuario["tipo_negocio"],intencion=perfil_usuario["intencion"],nivel_conocimiento=perfil_usuario["nivel_conocimiento"])
-        return {"response": respuesta["respuesta"], "sticker": respuesta["sticker"]}
+        guardar_interaccion(user_id, pregunta_usuario, respuesta_parafraseada, origen="faq")
+        return {"response": respuesta_parafraseada, "sticker": faq[pregunta_similar]["sticker"]}
+        #guardar_interaccion(user_id, pregunta_usuario, respuesta["respuesta"], origen="faq",tipo_negocio=perfil_usuario["tipo_negocio"],intencion=perfil_usuario["intencion"],nivel_conocimiento=perfil_usuario["nivel_conocimiento"])
+        #return {"response": respuesta["respuesta"], "sticker": respuesta["sticker"]}
 
     # 2. Si no hay coincidencia, usar memoria y GPT
     if user_id not in user_sessions:
