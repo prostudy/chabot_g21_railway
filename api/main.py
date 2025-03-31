@@ -35,10 +35,50 @@ client = gspread.authorize(creds)
 SHEET_NAME = "Chat Interacciones"
 sheet = client.open(SHEET_NAME).sheet1
 
-def guardar_interaccion(user_id, pregunta, respuesta, origen="gpt"):
+def guardar_interaccion(user_id, pregunta, respuesta, origen="gpt",tipo_negocio="desconocido",intencion="desconocido",nivel_conocimiento="desconocido"):
     timestamp = datetime.datetime.now().isoformat()
-    row = [timestamp, user_id, pregunta, respuesta, origen]
+    row = [
+        timestamp,
+        user_id,
+        pregunta,
+        respuesta,
+        origen,
+        tipo_negocio,
+        intencion,
+        nivel_conocimiento
+    ]
     sheet.append_row(row)
+
+
+def analizar_usuario(mensaje):
+    prompt = f"""
+Eres un analizador de perfil de usuario. Dado el siguiente mensaje, devuelve una estructura JSON con:
+
+- tipo_negocio: (hotel, restaurante, guía, otro)
+- intencion: (registrarse, aumentar visibilidad, solo informarse, otro)
+- nivel_conocimiento: (nuevo, ya conoce Escapadas.mx, registrado)
+
+Mensaje del usuario:
+"{mensaje}"
+
+Responde solo el JSON, sin explicación.
+    """
+
+    response = openai.ChatCompletion.create(
+        model="gpt-3.5-turbo",
+        messages=[{"role": "user", "content": prompt}]
+    )
+
+    try:
+        perfil = json.loads(response.choices[0].message["content"])
+    except Exception:
+        perfil = {
+            "tipo_negocio": "desconocido",
+            "intencion": "desconocido",
+            "nivel_conocimiento": "desconocido"
+        }
+    return perfil
+
 
 
 app = FastAPI()
@@ -130,7 +170,10 @@ async def chat(request: Request):
     pregunta_similar = encontrar_pregunta_mas_similar(pregunta_usuario)
     if pregunta_similar:
         respuesta = faq[pregunta_similar]
-        guardar_interaccion(user_id, pregunta_usuario, respuesta["respuesta"], origen="faq")
+
+        perfil_usuario = analizar_usuario(pregunta_usuario)
+
+        guardar_interaccion(user_id, pregunta_usuario, respuesta["respuesta"], origen="faq",tipo_negocio=perfil_usuario["tipo_negocio"],intencion=perfil_usuario["intencion"],nivel_conocimiento=perfil_usuario["nivel_conocimiento"])
         return {"response": respuesta["respuesta"], "sticker": respuesta["sticker"]}
 
     # 2. Si no hay coincidencia, usar memoria y GPT
@@ -245,7 +288,8 @@ Asegúrate de transmitir que esta estrategia integral maximiza la visibilidad y 
     respuesta_gpt = enriquece_html(response.choices[0].message["content"])
     user_sessions[user_id].append({"role": "assistant", "content": respuesta_gpt})
 
-    guardar_interaccion(user_id, pregunta_usuario, respuesta_gpt, origen="gpt")
+    perfil_usuario = analizar_usuario(pregunta_usuario)
+    guardar_interaccion(user_id, pregunta_usuario, respuesta_gpt, origen="gpt",tipo_negocio=perfil_usuario["tipo_negocio"],intencion=perfil_usuario["intencion"],nivel_conocimiento=perfil_usuario["nivel_conocimiento"])
     return {
         "response": respuesta_gpt,
         "sticker": ""
