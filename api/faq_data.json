@@ -18,6 +18,9 @@
     "¿Cómo me registro?":{
       "respuesta":"Visita esta página web y proporciona los datos solicitados: <a target='_blank' href='https://negocios.escapadas.mx/login?tab=signup'>https://negocios.escapadas.mx/login?tab=signup</a> Si necesitas asistencia personalizada comunicate al correo:alex.contacto@escapadas.mx o al teléfono:+52 56 4085 8541",
       "sticker":""
-    }
-    
+    },
+    "Algunos ejemplos o casos de exito":{
+      "respuesta":"Puedes visitar este <a href='https://escapadas.mexicodesconocido.com.mx/hoteles/finca-la-concordia-turismo-inclusivo-y-hospedaje-en-el-bosque' target='_blank'>enlace</a> que es uno de nuestros casos de éxito",
+      "sticker":"https://escapadas.mexicodesconocido.com.mx/wp-content/uploads/2024/10/finca-la-concordia-10-1000x625.jpg"
+    }    
   }
