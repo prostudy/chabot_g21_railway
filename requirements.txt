@@ -3,3 +3,5 @@ uvicorn
 openai==0.28
 numpy==1.23.5
 python-dotenv
+gspread 
+oauth2client
