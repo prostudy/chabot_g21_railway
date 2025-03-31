@@ -125,6 +125,7 @@ async def chat(request: Request):
     </Instruction>
     <Instruction>Paso 3: Proporciona información sobre cómo registrarse en la plataforma y los planes disponibles, resaltando que hay opciones sin costo inicial.</Instruction>
     <Instruction>Paso 4: Responde cualquier pregunta adicional que el usuario pueda tener y ofrece asistencia para el proceso de registro. El formato de tus respuestas debe contener  parrafos <p> <br> y palabras importantes en formato "strong" para facilitar la lectura.</Instruction>
+    <Instruction>Medios de contacto: Visita esta página web y proporciona los datos solicitados: https://negocios.escapadas.mx/login?tab=signup Si necesitas asistencia personalizada comunicate al correo:alex.contacto@escapadas.mx o al teléfono:+52 56 4085 8541</Instruction>
   </Instructions>
 
   <Membresias>
