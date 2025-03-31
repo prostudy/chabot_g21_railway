@@ -27,7 +27,7 @@ if google_creds_json:
     creds = ServiceAccountCredentials.from_json_keyfile_dict(json.loads(google_creds_json), scope)
 else:
     # Si estás en local, usa archivo local
-    creds = ServiceAccountCredentials.from_json_keyfile_name("api/guias-digitales-9c87ddbffba6.json", scope)
+    creds = ServiceAccountCredentials.from_json_keyfile_name("./api/guias-digitales-9c87ddbffba6.json", scope)
 
 client = gspread.authorize(creds)
 
