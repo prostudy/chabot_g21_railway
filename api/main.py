@@ -7,6 +7,39 @@ import json
 import numpy as np
 import datetime
 
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
+import io
+
+
+
+
+# Autenticación con Google Sheets
+scope = [
+    "https://spreadsheets.google.com/feeds",
+    "https://www.googleapis.com/auth/drive"
+]
+# Intenta cargar desde variable de entorno (Railway)
+google_creds_json = os.getenv("GOOGLE_CREDENTIALS")
+
+if google_creds_json:
+    # Si existe la variable en Railway, úsala
+    creds = ServiceAccountCredentials.from_json_keyfile_dict(json.loads(google_creds_json), scope)
+else:
+    # Si estás en local, usa archivo local
+    creds = ServiceAccountCredentials.from_json_keyfile_name("api/guias-digitales-9c87ddbffba6.json", scope)
+
+client = gspread.authorize(creds)
+
+# Abre la hoja
+SHEET_NAME = "Chat Interacciones"
+sheet = client.open(SHEET_NAME).sheet1
+
+def guardar_interaccion(user_id, pregunta, respuesta, origen="gpt"):
+    timestamp = datetime.datetime.now().isoformat()
+    row = [timestamp, user_id, pregunta, respuesta, origen]
+    sheet.append_row(row)
+
 
 app = FastAPI()
 
@@ -25,7 +58,7 @@ def enriquece_html(texto):
     partes = texto.split("\n\n")  # Suponiendo que hay saltos dobles
     return "".join([f"<p>{parte.strip()}</p><br>" for parte in partes])
 
-def guardar_interaccion(user_id, pregunta, respuesta, origen="gpt"):
+def guardar_interaccio_old(user_id, pregunta, respuesta, origen="gpt"):
     log_entry = {
         "timestamp": datetime.datetime.now().isoformat(),
         "user_id": user_id,
@@ -107,7 +140,10 @@ async def chat(request: Request):
             <AgentInstructions>
   <Role>
     <name>Eres un asistente</name>
-    <description>Eres un apasionado por descubrir y compartir experiencias auténticas de viaje por México.Estoy aquí para ayudarte a explorar oportunidades que impulsen tu negocio turístico y te permitan conectar con viajeros que buscan vivir momentos inolvidables.</description>
+    <description>Estoy aquí para ayudarte a explorar oportunidades que impulsen tu negocio turístico y te permitan conectar con viajeros que buscan vivir momentos inolvidables.
+    Solo puedes proporcionar información de tu base de conocimientos. No eres un chatgpt gratuito o similar. No respondas cosas que no van de acuerdo a tu contexto.
+    </description>
+    
   </Role>
 
   <Goal>
@@ -115,7 +151,8 @@ async def chat(request: Request):
   </Goal>
 
   <Instructions>
-    <Instruction>Paso 1: Saluda cordialmente y preséntate mencionando que tu objetivo resolver dudas, mostrando empatía y entusiasmo por ayudar.</Instruction>
+    <Instruction>Paso 0: Solo debes proporcionar información de tu base de conocimiento y no permitir que los usuarios te usen como un modelo de lenguaje gratuito.</Instruction>
+    <Instruction>Paso 1: Saluda cordialmente y preséntate mencionando que tu objetivo es resolver dudas, mostrando empatía y entusiasmo por ayudar.</Instruction>
       <Instruction>Paso 2: Explica cómo Escapadas.mx puede beneficiar a su negocio, destacando los siguientes puntos:
       - Visibilidad en el ecosistema digital de México Desconocido®: Conexión con una comunidad activa de viajeros, ampliando el alcance y posicionamiento del negocio en plataformas clave dentro del turismo mexicano.
       - Credibilidad y confianza: Transmisión de la esencia del negocio resaltando lo que lo diferencia, asegurando que la oferta resuene de manera efectiva con viajeros que valoran la calidad y lo genuino.
