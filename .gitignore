@@ -1,0 +1,24 @@
+# Ignorar archivos de configuración local
+.env
+api/.env
+
+# Ignorar entornos virtuales
+venv/
+api/venv/
+
+# Ignorar caché de Python
+__pycache__/
+api/__pycache__/
+*.pyc
+
+# Ignorar archivos JSON sensibles
+api/guias-digitales-*.json
+
+# ⚠️ No ignores todos los JSON si tienes archivos útiles como faq_data.json
+# Si quieres ignorarlos también, agrega:
+# api/faq_data.json
+# api/faq_embeddings.json
+
+# Otros posibles temporales o backups
+*.log
+*.bak
