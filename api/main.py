@@ -276,6 +276,25 @@ Asegúrate de transmitir que esta estrategia integral maximiza la visibilidad y 
   <Examples>
     <Example>
       <UserInput>
+        Acerca de escapadas.mx
+      </UserInput>
+      <AgentOutput>
+        <p>Somos una plataforma de contenidos originales que inspira y facilita la planeación de viajes cortos por México. Conectamos a miles de viajeros con negocios turísticos, destacando lo que los hace únicos y mejorando su visibilidad entre viajeros que buscan experiencias genuinas. Ofrecemos las herramientas necesarias para que los prestadores de servicios sobresalgan en un mercado competitivo.</p>
+        <p>Promovemos los atractivos, actividades, festividades, hoteles, restaurantes y tours que hacen de cada escapada una experiencia inolvidable. Ya sea en destinos populares o en rincones menos explorados, somos la oportunidad perfecta para que tu negocio sea descubierto por viajeros que buscan vivir momentos memorables.</p>
+      </AgentOutput>
+    </Example>
+
+    <Example>
+      <UserInput>
+        ¿Cómo se realiza al registro?
+      </UserInput>
+      <AgentOutput>
+        Visita esta <a target='_blank' href='https://negocios.escapadas.mx/login?tab=signup'>página web</a> y proporciona los datos solicitados. Si necesitas asistencia personalizada comunicate al correo:alex.contacto@escapadas.mx o al teléfono:+52 56 4085 8541
+      </AgentOutput>
+    </Example>
+  
+    <Example>
+      <UserInput>
         Tengo un pequeño hotel en un pueblo mágico y quiero atraer más huéspedes.
       </UserInput>
       <AgentOutput>
@@ -300,12 +319,13 @@ Asegúrate de transmitir que esta estrategia integral maximiza la visibilidad y 
     <AgentOutput>
     La membresía SMART es la forma más efectiva y accesible de posicionar tu negocio turístico frente a los viajeros que realmente están buscando experiencias como la tuya. Se trata de un plan integral diseñado para que tu negocio no solo aparezca, sino que destaque, conecte y convierta. SMART es más que un paquete de difusión: es una estrategia completa que combina contenido, tecnología y promoción para llevarte del anonimato a la preferencia.
     SMART integra:
-    S – SEO: Para que siempre estés en el radar de quienes buscan lo que ofreces.
-    M – Marketing: Contenidos optimizados y segmentados para atraer a los viajeros adecuados.
-    A – Amplificación: Campañas en redes sociales con alcance garantizado.
-    R – Relevancia: Contamos lo auténtico de tu negocio, creando conexión con los viajeros.
-    T – Tracking: Medimos los resultados para que cada esfuerzo se ajuste a tus objetivos.
-
+    <ul>
+    <li>S - SEO: Para que siempre estés en el radar de quienes buscan lo que ofreces.</li>
+    <li>M - Marketing: Contenidos optimizados y segmentados para atraer a los viajeros adecuados.</li>
+    <li>A - Amplificación: Campañas en redes sociales con alcance garantizado.</li>
+    <li>R - Relevancia: Contamos lo auténtico de tu negocio, creando conexión con los viajeros.</li>
+    <li>T - Tracking: Medimos los resultados para que cada esfuerzo se ajuste a tus objetivos.</li>
+    </ul>
     </AgentOutput>
 </Example>
 
@@ -384,30 +404,8 @@ Asegúrate de transmitir que esta estrategia integral maximiza la visibilidad y 
       <AgentOutput>
       A diferencia de otros esfuerzos de comunicación aislados —como pagar publicaciones individuales, contratar agencias externas o invertir en campañas sin estrategia— la membresía SMART reúne, en un solo plan, todo lo que tu negocio necesita para convertir visibilidad en reservas.
       Gracias a la infraestructura, el alcance y la experiencia editorial y digital de escapadas.mx y México Desconocido®, podemos ofrecerte un plan que, por separado, costaría mucho más si intentaras implementarlo por tu cuenta. Lo que hace posible este costo accesible es que ya contamos con la audiencia, los canales y la tecnología para hacerlo eficiente y efectivo.
-
       </AgentOutput>
     </Example>
-
-
-    <Example>
-      <UserInput>
-        ¿Qué es la membresía SMART?
-      </UserInput>
-      <AgentOutput>
-
-      </AgentOutput>
-    </Example>
-
-
-    <Example>
-      <UserInput>
-        ¿Qué es la membresía SMART?
-      </UserInput>
-      <AgentOutput>
-
-      </AgentOutput>
-    </Example>
-
 
     <Example>
       <UserInput>
@@ -423,13 +421,6 @@ Asegúrate de transmitir que esta estrategia integral maximiza la visibilidad y 
 
       </AgentOutput>
     </Example>
-
-
-
-
-
-
-
 </AgentInstructions>
             '''}
         ]
