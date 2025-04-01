@@ -17,7 +17,7 @@ import io
 # Autenticación con Google Sheets
 scope = [
     "https://spreadsheets.google.com/feeds",
-    "https://www.googleapis.com/auth/drive"
+    "https://www.googleapis.com/auth/drive" 
 ]
 # Intenta cargar desde variable de entorno (Railway)
 google_creds_json = os.getenv("GOOGLE_CREDENTIALS")
