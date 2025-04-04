@@ -143,6 +143,11 @@ async def chat(request: Request):
     <membresia>Membresía SMART 3 (hasta 3 propiedades - $70,500 MXN + IVA / anual)</strong>: Los mismos beneficios aplicados hasta 3 propiedades. Alcance garantizado de <strong>4.8 millones</strong>.</membresia>
     <membresia>Membresía SMART 5 (hasta 6 propiedades - $118,800 MXN + IVA / anual)</strong>: Máxima visibilidad y presencia para negocios con varias sedes o servicios. Incluye todos los beneficios anteriores con un alcance garantizado de <strong>5.4 millones</strong>.</membresia>
   </Membresias>
+
+  <contacto>
+      Medios de contacto: Visita esta página web y proporciona los datos solicitados: https://negocios.escapadas.mx/login?tab=signup 
+      Si necesitas asistencia personalizada comunícate al correo: alex.contacto@escapadas.mx o al teléfono: +52 56 4085 8541
+    </contacto>
     """
     }
 
