@@ -1,10 +1,78 @@
 {
-    "México Desconocido": {
-      "respuesta": "Formamos parte de una marca icónica y líder en el sector turístico, que durante más de 50 años ha inspirado a generaciones de viajeros a descubrir el México auténtico. Ahora, con escapadas.mx, damos un paso más allá, conectando tu negocio con una audiencia lista para convertir su inspiración en acción.",
+
+    "¿Qué es la Membresía SMART de escapadas.mx?": {
+      "respuesta": "Es un sistema completo que te brinda visibilidad constante, contenido editorial y presencia destacada durante todo un año. Va más allá de ser solo un paquete publicitario: incluye menciones editoriales, campañas digitales y posicionamiento, todo con el respaldo de escapadas.mx y México Desconocido.",
       "sticker": ""
     },
+    "¿Por qué la Membresía SMART resulta más rentable que contratar servicios por separado?": {
+      "respuesta": "Con SMART, todos los beneficios (menciones editoriales, campañas digitales, posicionamiento SEO, contenido optimizado, etc.) están incluidos bajo una sola cuota anual. Si se contrataran de manera independiente, la inversión mínima superaría fácilmente los 100,000 pesos anuales. Con SMART, la inversión total ronda los 33,000 pesos (o menos de 2,800 pesos al mes).",
+      "sticker": ""
+    },
+    "¿Cómo ayuda SMART a la conversión y a la sostenibilidad de mi negocio?": {
+      "respuesta": "A diferencia de una campaña digital puntual, la membresía SMART asegura presencia continua: incluso después de finalizado el periodo de un año, el contenido editorial y la visibilidad que generaste permanecen. Además, con menciones en medios confiables como México Desconocido y campañas segmentadas, logras mayor confianza y conversiones más sólidas.",
+      "sticker": ""
+    },
+    "¿Qué sucede cuando termina una campaña paga tradicional, y en qué se diferencia de SMART?": {
+      "respuesta": "Una campaña digital se acaba al agotar el presupuesto, dejando de mostrar tu negocio. SMART, en cambio, te ofrece una estrategia anual que permanece activa y deja rastro digital. Cuando finaliza el año, tus contenidos y menciones siguen visibles, potenciando la posibilidad de que te encuentren y contraten.",
+      "sticker": ""
+    },
+    "¿A cuánto equivale la inversión diaria en la Membresía SMART?": {
+      "respuesta": "Se estima que representa menos de 90 pesos al día, lo que la hace muy accesible si se compara con el costo por contacto calificado en campañas turísticas (entre 60 y 90 pesos) o con el coste de menciones editoriales individuales (que pueden rondar entre 30,000 y 80,000 pesos cada una).",
+      "sticker": ""
+    },
+    "¿Qué argumentos puedo usar si un prospecto dice que 'lo va a pensar'?": {
+      "respuesta": "Puedes recordarle que cada día sin una estrategia activa es un día en que viajeros potenciales no descubren su negocio. También existe la posibilidad de que se agoten los espacios disponibles por destino. Además, con dos o tres reservas adicionales al mes que logre gracias a SMART, recuperaría la inversión anual y todo lo demás sería ganancia.",
+      "sticker": ""
+    },
+    "¿Por qué las menciones editoriales y la presencia en México Desconocido son tan valiosas?": {
+      "respuesta": "Porque México Desconocido es una marca turística con más de 50 años inspirando a viajeros. Una mención editorial en medios de este nivel puede costar entre 30,000 y 80,000 pesos por evento; en SMART, se incluye dentro de la membresía, brindándote alcance y credibilidad sin coste adicional.",
+      "sticker": ""
+    },
+    "¿Cómo se comparan los costos de pauta en redes sociales con SMART?": {
+      "respuesta": "Una campaña digital regional en redes puede costar entre 20,000 y 50,000 pesos mensuales, sin garantizar que el contenido perdure una vez finalizado el presupuesto. La membresía SMART integra la pauta y la mención editorial dentro de un solo plan, con presencia constante y medible durante un año.",
+      "sticker": ""
+    },
+    "¿La Membresía SMART sigue funcionando tras finalizar el año?": {
+      "respuesta": "Sí. Aunque el plan anual concluya, tus contenidos (landing, menciones editoriales y posicionamiento) permanecerán visibles. Esto significa que la inversión realizada sigue generando presencia digital y puede atraer viajeros más allá del periodo activo de tu membresía.",
+      "sticker": ""
+    },  
+    
     "Algunos ejemplos o casos de exito":{
       "respuesta":"Puedes visitar este <a href='https://escapadas.mexicodesconocido.com.mx/hoteles/finca-la-concordia-turismo-inclusivo-y-hospedaje-en-el-bosque' target='_blank'>enlace</a> que es uno de nuestros casos de éxito",
       "sticker":"https://escapadas.mexicodesconocido.com.mx/wp-content/uploads/2024/10/finca-la-concordia-10-1000x625.jpg"
-    }    
+    },
+
+      "¿En qué consiste el proceso de implementación de la Membresía SMART?": {
+        "respuesta": "Es un flujo ordenado de pasos que inicia con la firma de contrato y pago, continua con la recolección de información a través de un cuestionario y una sesión de brief, y finaliza con la ejecución de un plan de contenidos y evaluaciones periódicas para optimizar resultados.",
+        "sticker": ""
+      },
+      "¿Cuál es el primer paso dentro del proceso?": {
+        "respuesta": "La Contratación. Esto involucra la firma de contrato y la presentación del comprobante de pago, asegurando formalidad en la relación y la activación de la membresía.",
+        "sticker": ""
+      },
+      "¿Para qué sirve el cuestionario inicial de Onboarding?": {
+        "respuesta": "El cuestionario permite obtener la información esencial sobre tu negocio (objetivos, tipo de servicio, público meta, etc.). Con esos datos, podemos diseñar la estrategia de contenido más adecuada a tus necesidades y temporalidades.",
+        "sticker": ""
+      },
+      "¿En qué consiste la Sesión de brief y cómo la agendo?": {
+        "respuesta": "Es una reunión para profundizar en los detalles de tu negocio y validar la información recopilada en el cuestionario. Puedes agendarla a través del enlace: https://meetings.hubspot.com/karen-avila-gonzalez",
+        "sticker": ""
+      },
+      "¿Cómo se desarrolla la Estrategia de contenido?": {
+        "respuesta": "Se basa en tus objetivos comerciales, las temporalidades clave para tu negocio y el comportamiento de tu público potencial. Este plan estratégico anual define qué contenidos se producirán y en qué momentos se publicarán, para maximizar la efectividad de tu membresía SMART.",
+        "sticker": ""
+      },
+      "¿Qué incluye la generación y publicación de los primeros contenidos?": {
+        "respuesta": "Se crea la Landing en escapadas.mx, se publica el primer post en Facebook, se lanza la primera Story destacada en Instagram y se mencionan tu negocio tanto en notas de México Desconocido como en escapadas.mx, proporcionando un impulso inicial de visibilidad.",
+        "sticker": ""
+      },
+      "¿Cuál es la etapa de Implementación del plan anual?": {
+        "respuesta": "Es el momento en que se generan y publican todos los contenidos restantes a lo largo del año, según el plan estratégico previamente definido. Incluye acciones y campañas continuas para mantener tu negocio siempre visible ante los viajeros.",
+        "sticker": ""
+      },
+      "¿Cómo se lleva a cabo el Reporte y la Optimización?": {
+        "respuesta": "Se realiza un reporte de desempeño que mide la efectividad de las acciones realizadas. Con esa información se ajusta la estrategia y se potencializan los contenidos, asegurando que la membresía SMART produzca mejores resultados de forma constante.",
+        "sticker": ""
+      }
+        
   }
