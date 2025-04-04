@@ -135,6 +135,14 @@ async def chat(request: Request):
     <p>Último párrafo de cierre.</p><br><br>
 
     Si tu respuesta es demasiado larga, crea varios párrafos cumpliendo estas reglas.
+
+     <!-- MEMBRESÍAS -->
+  <Membresias>
+    <membresia>Plan Básico (Gratis)</strong>: Ideal para comenzar. Incluye una landing básica con galería de 5 fotos y visibilidad inicial en la plataforma. Sin costo y sin alcance garantizado.</membresia>
+    <membresia>Membresía SMART (1 propiedad - $28,000 MXN + IVA / anual)</strong>: Ofrece una landing optimizada, campañas de display nativo, estrategia de linkbuilding en el ecosistema de México Desconocido®, posiciones exclusivas en el destino y generación de contenido social. Garantiza un alcance de <strong>1.5 millones</strong> de impactos.</membresia>
+    <membresia>Membresía SMART 3 (hasta 3 propiedades - $70,500 MXN + IVA / anual)</strong>: Los mismos beneficios aplicados hasta 3 propiedades. Alcance garantizado de <strong>4.8 millones</strong>.</membresia>
+    <membresia>Membresía SMART 5 (hasta 6 propiedades - $118,800 MXN + IVA / anual)</strong>: Máxima visibilidad y presencia para negocios con varias sedes o servicios. Incluye todos los beneficios anteriores con un alcance garantizado de <strong>5.4 millones</strong>.</membresia>
+  </Membresias>
     """
     }
 
