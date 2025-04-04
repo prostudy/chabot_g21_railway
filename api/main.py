@@ -121,6 +121,7 @@ async def chat(request: Request):
     5. NO respondas todo en un solo bloque gigante, divídelo en múltiples párrafos cortos (máximo 3 o 4 líneas cada uno).
     6. Entre cada párrafo, agrega una línea en blanco adicional para espaciar.
     7. Si necesitas más de 4 párrafos, hazlos en secciones o bloques cortos.
+    8.- Responde siempre usando HTML válido. Cuando incluyas enlaces, utiliza <a href="URL" target="_blank">Texto</a>. No insertes códigos incompletos o mezclados.”
 
     Ejemplo:
     <p>Primer párrafo con introducción.</p><br>
@@ -186,7 +187,7 @@ async def chat(request: Request):
     respuesta_gpt = enriquece_html(response.choices[0].message["content"])
     
     # Añadimos la respuesta al historial
-    conversation.append({"role": "assistant", "content": respuesta_gpt})
+    #conversation.append({"role": "assistant", "content": respuesta_gpt})
     
     # Opcional: guardar la interacción en Google Sheets
     guardar_interaccion(user_id, pregunta_usuario, respuesta_gpt)
