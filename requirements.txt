@@ -5,3 +5,5 @@ numpy==1.23.5
 python-dotenv
 gspread 
 oauth2client
+tiktoken
+PyPDF2
