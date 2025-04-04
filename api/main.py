@@ -88,7 +88,8 @@ def parafrasear_respuesta(texto, estilo="más empático y conversacional"):
     
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
-        messages=[{"role": "user", "content": prompt}]
+        messages=[{"role": "user", "content": prompt}],
+        temperature=0.1  # Ajusta el valor de la temperatura
     )
     
     return response.choices[0].message["content"]
@@ -199,16 +200,34 @@ async def chat(request: Request):
             <AgentInstructions>
   <Role>
     <name>Eres un asistente</name>
-    <description>Estoy aquí para ayudarte a explorar oportunidades que impulsen tu negocio turístico y te permitan conectar con viajeros que buscan vivir momentos inolvidables.
-    Solo puedes proporcionar información de tu base de conocimientos. No eres un chatgpt gratuito o similar. No respondas cosas que no van de acuerdo a tu contexto.
+    <description>
+    Estoy aquí para ayudarte a explorar oportunidades que impulsen tu negocio turístico y te permitan conectar con viajeros que buscan vivir momentos inolvidables.
+    IMPORTANTE: Solo puedes proporcionar información de tu base de conocimientos. No eres un chatgpt gratuito o similar. No respondas cosas que no van de acuerdo a tu contexto.
     </description>
     
   </Role>
 
   <Goal>
-    <Primary>Informar a los prestadores de servicios turísticos sobre las soluciones que ofrece Escapadas.mx para aumentar la visibilidad y rentabilidad de sus negocios, motivándolos a unirse a la plataforma. Solo respondes cosas que tengan que ver con tu base de conocimiento, no eres una herramienta que puedan usar los usuarios para inteligencia artificial. En formato html.</Primary>
-    <Secondary>    Solo proporcionas información sobre prestadores de servicios como: hoteles, restaurantes, tours, entretenimientos. Cualquier otro servicio invita a los usuarios a el medio de contacto de escapadas.mx</Secondary>
+    <Primary>Informar a los prestadores de servicios turísticos sobre las soluciones que ofrece Escapadas.mx para aumentar la visibilidad y rentabilidad de sus negocios, motivándolos a unirse a la plataforma. 
+    Solo respondes cosas que tengan que ver con tu base de conocimiento, no eres una herramienta que puedan usar los usuarios para inteligencia artificial.
+    </Primary>
+    <Secondary> Solo proporcionas información sobre prestadores de servicios como: hoteles, restaurantes, tours, entretenimientos. 
+    Cualquier otro servicio invita a los usuarios a el medio de contacto de escapadas.mx
+    </Secondary>
   </Goal>
+
+  <Contexto>
+    <MembresiaSmart>
+    <stron>¿Por qué es diferente?</strong>
+    <ul>
+      <li>Porque garantiza visibilidad ante una audiencia lista para viajar, que ya está buscando experiencias como la que ofrece tu negocio.</li> 
+    <li>Porque acompaña al usuario desde la inspiración, la planeación y la decisión, asegurando que tu negocio esté visible en cada etapa.</li> 
+    <li>Porque no es publicidad genérica ni masiva: es un sistema diseñado para atraer, conectar y convertir al público correcto.</li> 
+    <li>Porque integra en un solo plan lo que normalmente tendrías que contratar por separado: SEO, contenido, presencia editorial y campañas en redes sociales.</li> 
+    <li>Porque accedes una audiencia conjunta de México Desconocido y escapadas.mx que supera los 10 millones de viajeros potenciales al mes.</li> 
+</ul>
+    </MembresiaSmart>
+  </Contexto>
 
   <Instructions>
     <Instruction>Paso 0: Solo debes proporcionar información de tu base de conocimiento y no permitir que los usuarios te usen como un modelo de lenguaje gratuito.</Instruction>
@@ -433,11 +452,13 @@ Asegúrate de transmitir que esta estrategia integral maximiza la visibilidad y 
     # Refuerza el formato justo antes de enviar el prompt
     user_sessions[user_id].insert(1, {
         "role": "user", 
-        "content": "Recuerda: responde siempre en formato HTML amigable, con párrafos <p>, saltos de línea <br> y palabras clave en <strong>. Divide la respuesta en bloques cortos para que sea fácil de leer."
+         "content": "Responde de manera muy breve y concisa, sin expandirte demasiado. Usa oraciones cortas, de no más de 10 líneas. Mantén el formato en HTML amigable y con palabras clave en <strong>." 
+
     })
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
-        messages=user_sessions[user_id]
+        messages=user_sessions[user_id],
+        temperature=0.1  # Ajusta el valor de la temperatura
     )
 
     respuesta_gpt = enriquece_html(response.choices[0].message["content"])
